@@ -83,6 +83,22 @@ pantalla es pequeña)
     justify-content: space-between;
     align-items: center;
 }
+/*Para centrar vertical y horizontalmente*/
+.row.center{
+    justify-content: center;
+}
+
+h1{
+    font-size: 1.8rem;
+    /*padding vertical y horizontal*/
+    padding: 1rem 0;
+}
+
+h2{
+    font-size: 1.6rem;
+    /*padding vertical y horizontal*/
+    padding: 1rem 0;
+}
 
 /*Para eliminar el subrayado en las etiquetas a*/
 a{
@@ -91,6 +107,14 @@ a{
 /*En caso de poner el cursor arriba poner de color blanco*/
 a:hover{
     color: #ffffff;
+}
+a.brand{
+    color:#ffffff;  
+    font-size: 3rem;
+    font-weight: bold;
+}
+a.brand:hover{
+    color:#ffffff;  
 }
 
 /*Links dentro del header tienen el siguiente color*/
@@ -101,16 +125,33 @@ header a{
 header a:hover{
     color: #f5c906;
 }
-a.brand{
-    color:#3f88f5;  
-    font-size: 3rem;
-    font-weight: bold;
+
+/*======== [Imagenes] =======*/
+img{
+    border-radius: 0.5rem;
 }
-a.brand:hover{
-    color:#3f88f5;  
+img.medium{
+    max-width: 22rem;
+    width: 100;
 }
 
-/*Para centrar vertical y horizontalmente*/
-.row.center{
-    justify-content: center;
+/*======== [Cards (tarjetas)] =======*/
+.card{
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    margin: 1rem;    
+}
+.card-body{
+    padding: 1rem;
+}
+/*todo lo que esté adentro de card body*/
+.card-body > *{
+    margin-bottom: 0.5rem;
+}
+
+/*======== [Valoraciones] =======*/
+/*Para todos las etiquetas span dentro de la clase rating*/
+.rating span{
+    color: #000000;
+    margin: 0.1rem;
 }
