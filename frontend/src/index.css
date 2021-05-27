@@ -168,3 +168,7 @@ img.medium{
   color: #000000;
   margin: 0.1rem;
 }
+
+.rating span:last-child{
+  color: #4c5057;
+}
