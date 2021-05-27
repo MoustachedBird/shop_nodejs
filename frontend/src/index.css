@@ -35,10 +35,14 @@ body{
 }
 
 
-/*==============[Diseño]===============*/
+/*
+=====================================
+==============[Diseño]===============
+=====================================
+*/
 
 /*Creamos una clase llamada grid-container*/
-.grid-container{
+.main-container{
   /*Para manejo de secciones mas facilmente*/
   display: grid;
   /*Se definen las áreas de las paginas*/
@@ -65,8 +69,9 @@ header{
 
 main{
   grid-area: main;
-  /*borde*/
-  padding: 1rem;
+  /*margen*/
+  padding: 3rem;
+  background-color: #eeeded;
 }
 
 footer{
@@ -80,7 +85,11 @@ footer{
   background-size: cover;
 }
 
-/*======== [Clases comunes] =======*/
+/*
+====================================
+======== [Clases comunes] ==========
+====================================
+*/
 
 /*Creamos una clase llamada row
 para hacer la pagina responsive (que
@@ -98,16 +107,70 @@ pantalla es pequeña)
   justify-content: center;
 }
 
+/*Para alinear los items hacia arriba*/
+.row.top{
+  align-items: flex-start;
+}
+
+.col-1{
+  flex: 1 1 25rem;
+}
+
+.col-2{
+  flex: 2 1 50rem;
+}
+
+/*modificaciones de titulo h1*/
 h1{
   font-size: 1.8rem;
   /*padding vertical y horizontal*/
   padding: 1rem 0;
 }
 
+/*Modificacion de titulos h2*/
 h2{
   font-size: 1.6rem;
   /*padding vertical y horizontal*/
   padding: 1rem 0;
+}
+
+/*Modificaciones en listas*/
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/*Modificaciones en elementos de listas (para agregar separaciones entre c/u)*/
+li{
+  margin-top: 1rem;
+}
+
+button{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #979494 solid;
+
+  font-size: 1.6rem;
+  /*opciones de fuentes 1,2 y 3...*/
+  font-family: Helvetica, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #abafb5;
+  cursor: pointer;
+}
+
+button:hover{
+  border: 0.1rem #242323 solid;
+}
+
+button.primary{
+  background-color: #5e9eff;
+}
+
+button.block{
+  width: 100%;
 }
 
 /*Para eliminar el subrayado en las etiquetas a*/
@@ -139,20 +202,34 @@ header a:hover{
   color: #f5c906;
 }
 
-/*======== [Imagenes] =======*/
+/*
+==================================
+========== [Imagenes] ============
+==================================
+*/
 img{
   border-radius: 0.5rem;
 }
 img.medium{
   max-width: 26rem;
-  width: 100;
+  width: 100%;
 }
 
-/*======== [Cards (tarjetas)] =======*/
+img.large{
+  max-width: 32rem;
+  width: 100%;
+}
+
+/*
+===================================
+======== [Cards (tarjetas)] =======
+===================================
+*/
 .card{
   background-color: #f0f0f0;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   margin: 1rem;    
+  border: 0.1rem #b3b3b3 solid;
 }
 .card-body{
   padding: 1rem;
@@ -162,7 +239,20 @@ img.medium{
   margin-bottom: 0.5rem;
 }
 
-/*======== [Valoraciones] =======*/
+.huge-card{
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  margin: 1rem;    
+  border: 0.1rem #d1d1d1 solid;
+
+  padding: 1.5rem;
+}
+
+/*
+=================================
+========= [Valoraciones] ========
+=================================
+*/
 /*Para todos las etiquetas span dentro de la clase rating*/
 .rating span{
   color: #000000;
@@ -171,4 +261,17 @@ img.medium{
 
 .rating span:last-child{
   color: #4c5057;
+}
+
+/*
+==================================
+=========== [Alertas] ============
+==================================
+*/
+.success{
+  color: #0e5202;
+}
+
+.error{
+  color: #c00b0b;
 }

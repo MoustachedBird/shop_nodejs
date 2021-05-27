@@ -10,6 +10,7 @@ const data = {
             rating:5,
             numReviews:2,
             description:'Es guía bonita, actualizada para 2021',
+            countInStock: 10,
         },
         {
             _id:'2',
@@ -20,7 +21,8 @@ const data = {
             brand: 'EdiQ',
             rating:4.5,
             numReviews:10,
-            description:'Es guía bonita, actualizada para 2021'
+            description:'Es guía bonita, actualizada para 2021',
+            countInStock: 0,
         },
         {
             _id:'3',
@@ -32,6 +34,7 @@ const data = {
             rating:2,
             numReviews:25,
             description:'Es guía bonita, actualizada para 2021',
+            countInStock: 15,
         },
         {
             _id:'4',
@@ -43,6 +46,7 @@ const data = {
             rating:5,
             numReviews:100,
             description:'Es guía bonita, actualizada para 2021',
+            countInStock: 7,
         },
         {
             _id:'5',
@@ -54,6 +58,7 @@ const data = {
             rating:4.5,
             numReviews:1,
             description:'Es guía bonita, actualizada para 2021',
+            countInStock: 4,
         }
     ]
 };
