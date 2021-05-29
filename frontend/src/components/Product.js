@@ -14,7 +14,7 @@ Conceptos básicos:
 export default function Product(props) {
     const {product} = props;
     return (
-        <div key={product._id} className="card">
+        <div key={product._id} className="huge-card">
             <a href={`/product/${product._id}`}>
                 <img 
                     className="medium" 

@@ -211,7 +211,7 @@ img{
   border-radius: 0.5rem;
 }
 img.medium{
-  max-width: 26rem;
+  max-width: 22rem;
   width: 100%;
 }
 
@@ -272,6 +272,22 @@ img.large{
   color: #0e5202;
 }
 
-.error{
+.danger{
   color: #c00b0b;
+}
+
+.alert{
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info{
+  color: #2020a0;
+  background-color: #b3b3fa;
+}
+
+.alert-danger{
+  color: #c00b0b;
+  background-color: #f59191;
 }
