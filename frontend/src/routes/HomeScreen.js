@@ -1,41 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+
 
 import Product from '../components/Product';
 import data from '../data';
 import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { listProducts } from '../actions/productActions';
 
 export default function HomeScreen() {
 
-    /*React Hook: el valor por default de products es un array vacío (useState), 
-    cuando queremos actualizar el valor de products usamos setProducts
-    */
-    const [products,setProducts] = useState([]);
-    //para ver el estado de carga
-    const [loading, setLoading] = useState(false);
-    //para ver errores
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch();
+    const productList = useSelector(state => state.productList);
+    //cuando se definen así las constantes, se buscan dentro de otra constante
+    const {loading, error, products} = productList;
     
     //Se ejecuta una vez cuando se compila el servidor
     useEffect(() => {
-        //se define la funcion fetchdata
-        const fetchData = async() =>{
-            try{
-                setLoading(true);
-                //toma los productos del link
-                const { data } = await axios.get('/api/products');
-                setLoading(false);
-                //los guarda en la constante products
-                setProducts(data);
-            } catch(err){
-                setError(err.message);
-                setLoading(false);
-            }
-        };
-        //se llama a la funcion fetchdata
-        fetchData();
-    }, []);
+        dispatch(listProducts());
+    }, [dispatch]);
 
 
     return (
