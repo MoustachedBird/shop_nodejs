@@ -112,6 +112,11 @@ pantalla es pequeña)
   align-items: flex-start;
 }
 
+.separate-right{
+  margin-right: .5rem;
+}
+
+
 .col-1{
   flex: 1 1 25rem;
 }
@@ -146,7 +151,8 @@ li{
   margin-top: 1rem;
 }
 
-button{
+/*otros elementos de entrada de datos y botones*/
+input, select, textarea, button{
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem #979494 solid;
@@ -157,11 +163,15 @@ button{
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #abafb5;
-  cursor: pointer;
 }
 
-button:hover{
+button{
+  background-color: #ffffff;
+  cursor: pointer;
+
+}
+
+input:hover, select:hover, textarea:hover,button:hover{
   border: 0.1rem #242323 solid;
 }
 
@@ -181,6 +191,15 @@ a{
 /*En caso de poner el cursor arriba poner de color blanco*/
 a:hover{
   color: #626dff;
+}
+
+.badge{
+  background-color: #c00b0b;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
 }
 
 /*Color de la marca*/
@@ -250,7 +269,7 @@ img.large{
 
 /*
 =================================
-========= [Valoraciones] ========
+========= [Iconos] ========
 =================================
 */
 /*Para todos las etiquetas span dentro de la clase rating*/
@@ -261,6 +280,14 @@ img.large{
 
 .rating span:last-child{
   color: #4c5057;
+}
+
+.navigation-bar-icon{
+  color: #ffffff;
+}
+
+.navigation-bar-icon:hover{
+  color: #f5c906;
 }
 
 /*

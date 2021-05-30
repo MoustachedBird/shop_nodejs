@@ -14,12 +14,12 @@ export default function HomeScreen() {
     //cuando se definen así las constantes, se buscan dentro de otra constante
     const {loading, error, products} = productList;
     
+
     //Se ejecuta una vez cuando se compila el servidor
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);
-
-    
+        
     return (
         <div>
             {loading ? <LoadingBox></LoadingBox>

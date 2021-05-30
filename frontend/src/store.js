@@ -1,12 +1,21 @@
 //Redux store
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { productDetailsReducer, productListReducer } from './reducers/productReducers';
+import { cartReducer } from './reducers/cartReducers';
+import { productListReducer } from './reducers/productReducers';
+import { productDetailsReducer} from './reducers/productReducers';
 
-const initialState = {};
+const initialState = {
+    cart:{
+        cartItems: localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems'))
+        : [],
+    }
+};
+
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
+    cart: cartReducer,
 })
 
 /* componer potenciador???? para mostar en chrome de manera grafica utilizando extension*/
