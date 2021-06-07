@@ -44,7 +44,9 @@ function App() {
                 <Route path="/product/:id" component={ProductScreen}></Route>                
                 <Route path="/" component={HomeScreen} exact></Route>
             </main>
-            <footer className="row center">
+            <footer className="row center" style={{ 
+                backgroundImage: `url(${process.env.PUBLIC_URL + '/img/bg-footer.png'})` 
+            }}>
                 © Copyright 2021 Ediq MX
             </footer>
         </div>

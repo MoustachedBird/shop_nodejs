@@ -1,4 +1,26 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+    users: [
+        {
+            name: "moustachedbird",
+            email: "yeu.cl@hotmail.com",
+            /*Nunca se guarda texto plano como contraseña, primero se coloca la contraseña
+            y luego se coloca un "salt round" que significa la cantidad de veces que el hash se
+            va a ejecutar para ecriptar la contraseña, entre mas rounds más dificil será averiguar
+            el valor real, pero más lento será (aproximadamente 2^N más lento)
+            
+            La funcion hash se ejecuta de manera asincrona*, si se pone sync será sincrona*/
+            password: bcrypt.hashSync('1234',8),
+            isAdmin: true,
+        },
+        {
+            name: "oyuki",
+            email: "ejemplo@hotmail.com",
+            password: bcrypt.hashSync('1234',8),
+            isAdmin: false,
+        },
+    ],
     products:[
         {
             _id:'1',

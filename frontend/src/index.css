@@ -79,10 +79,9 @@ footer{
   background-color: #161C26;
   color: #abafb5;
   
-  background-image: url(https://gaviaspreview.com/wp/ziston/wp-content/uploads/2020/09/bg-footer-1.png);
   background-position: top left;
   background-repeat: no-repeat;
-  background-size: cover;
+  /*background-size: cover;*/
 }
 
 /*
@@ -116,13 +115,16 @@ pantalla es pequeña)
   margin-right: .5rem;
 }
 
-
 .col-1{
   flex: 1 1 25rem;
 }
 
 .col-2{
   flex: 2 1 50rem;
+}
+
+.min-30{
+   min-width: 30rem;
 }
 
 /*modificaciones de titulo h1*/
@@ -229,6 +231,12 @@ header a:hover{
 img{
   border-radius: 0.5rem;
 }
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+
 img.medium{
   max-width: 22rem;
   width: 100%;
@@ -238,6 +246,7 @@ img.large{
   max-width: 32rem;
   width: 100%;
 }
+
 
 /*
 ===================================
