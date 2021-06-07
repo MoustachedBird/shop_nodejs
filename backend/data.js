@@ -23,7 +23,6 @@ const data = {
     ],
     products:[
         {
-            _id:'1',
             name:'Guía Más: Cívica y Ética 2',
             category:'guia',
             image: '/images/guia1.png',
@@ -35,7 +34,6 @@ const data = {
             countInStock: 10,
         },
         {
-            _id:'2',
             name:'Guía Más: Matemáticas I',
             category:'guia',
             image: '/images/guia2.png',
@@ -47,7 +45,6 @@ const data = {
             countInStock: 0,
         },
         {
-            _id:'3',
             name:'Guía Best: Todas las materias',
             category:'guia',
             image: '/images/guia3.png',
@@ -59,7 +56,6 @@ const data = {
             countInStock: 15,
         },
         {
-            _id:'4',
             name:'Guía Más: Geografía',
             category:'guia',
             image: '/images/guia4.png',
@@ -71,7 +67,6 @@ const data = {
             countInStock: 7,
         },
         {
-            _id:'5',
             name:'Guía Más: Español I',
             category:'guia',
             image: '/images/guia5.png',
