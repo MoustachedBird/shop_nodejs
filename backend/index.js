@@ -2,8 +2,16 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import productRouter from './routers/productRouter.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
+
+//middleware para entender el contenido json de las peticiones
+app.use(express.json()); 
+app.use(express.urlencoded({extended:true}));
+
 // eslint-disable-next-line no-undef
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/shop_libros',{
     useNewUrlParser: true,
