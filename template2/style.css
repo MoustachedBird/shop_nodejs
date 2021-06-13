@@ -1,0 +1,157 @@
+
+h1 { font-size: 4rem; }
+h2 { 
+    font-size: 1rem;
+    text-align: center;
+}
+h3 { font-size: 2rem;}
+h4 { 
+    font-size: 0.9rem; 
+    text-align: center;
+    margin: 0;    
+}
+
+
+
+p {
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/*======================[BODY]==========================*/
+body {
+    margin:0 auto;
+    background: #cfcfcf;  /* fallback for old browsers */
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main{       
+    margin-bottom: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.huge-card{
+    background-color: #161C26;
+    border-radius: 0.8rem;
+    margin: 2.5rem;    
+    border: 0.1rem #d1d1d1 solid;
+    
+    padding: 1.5rem;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+
+/*======== [Cards (tarjetas)] =======*/
+.card{
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    margin: 1rem;    
+}
+.card-body{
+    padding: 1rem;
+}
+
+/*======== [Imagenes] =======*/
+img{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+img.medium{
+    max-width: 22rem;
+    width: 100%;
+}
+
+/*======================[HERO]==========================*/
+.hero-banner{
+    background-color: #161C26;
+    background-image: url('https://todosobrelaarenablog.files.wordpress.com/2017/10/descarga3.jpg?w=980&h=612&crop=1');
+
+    padding: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content{
+    text-align: center;
+}
+
+
+/*======================[HEADER]==========================*/
+header{
+    background-color: #011a3d;
+}
+
+header a{
+    color: black;
+    margin-left: 1rem; 
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    /*Margen vertical y horizontal*/
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.nav-options{
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    border: 3px black solid;
+}
+
+.secondbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: #cfcfcf;
+    max-width: 1400px;
+    padding: 0.8rem;
+    margin: 0 auto;
+}
+
+.secondbar a {
+    border: 3px black solid;
+}
+
+.tiny-announcement{
+    background-color: #080a0c;
+    text-align: center;
+    padding: 0.2rem;
+}
+
+/*Color de la marca*/
+a.brand{
+    margin-left: 2rem; 
+    color:#ffffff;  
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+.searchbar{
+    align-self: center;
+}
+
+/*==========================[FOOTER]===========================*/
+
+footer{
+    background-color: #161C26;
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem;
+}
+

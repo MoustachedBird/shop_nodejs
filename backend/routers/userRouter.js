@@ -33,7 +33,7 @@ userRouter.post('/signin',expressAsyncHandler(async(req,res)=>{
                 return;
             }
         }
-        res.status(401).send({message: 'Usuario o contraseña invalidos'});
+        res.status(401).send({message: 'Usuario o contraseña incorrectos'});
     }
 ));
 

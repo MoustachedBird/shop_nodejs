@@ -18,66 +18,68 @@ html{
   fácil dimensionar elementos.*/
   box-sizing: border-box; 
 }
+
+/*CSS root de REACT*/
+#root{
+  height: 100%;
+  /*Global CSS Variables*/
+  --bg-main: #eeeded;
+  --bg-nav: #00091b;
+  --bg-footer: #161C26;
+
+  --text-color-main: #000000;
+  --text-color-second: #ffffff;
+  --text-color-success: #0e5202;  
+  --text-color-danger: #c00b0b;
+  --text-color-info: #2020a0;
+
+  --nav-size: 60px;
+  
+  --border: 1px #000000 solid;
+  --border-radius: 8px;
+  --speed: 500ms; 
+}
+
 body{
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
   /*opciones de fuentes 1,2 y 3...*/
-  font-family: Helvetica, Arial, sans-serif;
-
+  /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  */
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/*CSS root de REACT*/
-#root{
-  height: 100%;
-}
-
 
 /*
 =====================================
 ==============[Diseño]===============
 =====================================
 */
-
-/*Creamos una clase llamada grid-container*/
-.main-container{
-  /*Para manejo de secciones mas facilmente*/
-  display: grid;
-  /*Se definen las áreas de las paginas*/
-  grid-template-areas: 
-  'header'
-  'main'
-  'footer';
-
-  /*1 fr = 1 fragmento, total de fragmentos que ocupa una sección*/
-  grid-template-columns: 1fr; /*solo habra una columna, 1 fragmento*/
-  
-  /*Se establece el tamaño de cada una de las secciones 
-  definidas anteriormente (header, main y footer) en el mismo orden*/
-  grid-template-rows: 5rem 1fr 5rem;
-  
-  height: 100%;
-}
-
+/*QUITAR GRID*/
 header{
-  /*Se asigna a la etiqueta header del html la propiedad header del css*/
-  grid-area: header;
-  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: var(--bg-nav);
 }
 
+
+/*QUITAR GRID*/
 main{
   grid-area: main;
   /*margen*/
   padding: 3rem;
-  background-color: #eeeded;
+  background-color: var(--bg-main);
 }
 
+
+/*QUITAR GRID*/
 footer{
   grid-area: footer;
-  background-color: #161C26;
-  color: #abafb5;
+  background-color: var(--bg-footer);
+  color: var(--text-color-second);
   
   background-position: top left;
   background-repeat: no-repeat;
@@ -86,33 +88,159 @@ footer{
 
 /*
 ====================================
-======== [Clases comunes] ==========
+======== [Nav bar] ==========
+====================================
+*/
+.nav-item{
+  display: flex;
+}
+
+.icon-button{
+  --button-size: calc(var(var(--nav-size)) * 0.8);
+  width: var(--button-size);
+  height: var(--button-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover{
+  filter: brightness(1.2);
+}
+
+.icon-button svg{
+  fill: var(--text-color-main);
+  width: 20px;
+  height: 20px;
+}
+
+.search-bar{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+/*
+====================================
+======== [Dropdown] ==========
 ====================================
 */
 
-/*Creamos una clase llamada row
+.menu-bar{
+  background-color: var(--bg-nav);
+  width: auto;
+  order:-1;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown{
+  /*
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(10%);
+  background-color: (var(--bg-main));
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+  background-color: var(--bg-nav);
+  */
+  display: none;
+  flex-direction: column;
+}
+
+
+.menu-item{
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+}
+
+@media screen and (min-width:610px){
+  .dropdown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .menuIcon{
+    display: none;
+  }
+
+  .menu-bar{
+    background-color: var(--bg-footer);
+    order:unset;
+    width: 100%;
+    align-items: center;
+  }
+
+  header{
+    flex-direction: column;
+  }
+}
+
+
+.menu-item:hover{
+  background-color: green;
+}
+
+/*
+====================================
+======== [Clases comunes] ==========
+====================================
+*/
+.simple-flex{
+  display: flex;
+}
+
+/*Creamos una clase llamada flex-container
 para hacer la pagina responsive (que
 cambie de lugar los elementos si la 
 pantalla es pequeña)
 */
-.row{
+.flex-container-column{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
+
 /*Para centrar vertical y horizontalmente*/
-.row.center{
+.flex-container.center{
   justify-content: center;
 }
 
+.flex-container.space-around{
+  justify-content: space-around;
+}
+
 /*Para alinear los items hacia arriba*/
-.row.top{
+.flex-container.top{
   align-items: flex-start;
+}
+
+.flex-container.items_to_end{
+  justify-content: flex-end;
+}
+
+.flex-container.items_to_start{
+  justify-content: flex-start;
 }
 
 .separate-right{
   margin-right: .5rem;
+}
+
+.separate-left{
+  margin-left: .5rem;
 }
 
 .col-1{
@@ -121,6 +249,10 @@ pantalla es pequeña)
 
 .col-2{
   flex: 2 1 50rem;
+}
+
+.size-1{
+  flex: 1 1 auto;
 }
 
 .min-30{
@@ -145,12 +277,12 @@ h2{
 ul{
   padding: 0;
   margin: 0;
-  list-style-type: none;
+  list-style: none;
 }
 
 /*Modificaciones en elementos de listas (para agregar separaciones entre c/u)*/
 li{
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 /*otros elementos de entrada de datos y botones*/
@@ -188,14 +320,14 @@ button.block{
 /*Para eliminar el subrayado en las etiquetas a*/
 a{
   text-decoration: none;
-  color: #000000;
+  color: var(--text-color-main);
 }
 /*En caso de poner el cursor arriba poner de color blanco*/
 a:hover{
   color: #626dff;
 }
 
-.badge{
+.number-cart{
   background-color: #c00b0b;
   color: #ffffff;
   border-radius: 50%;
@@ -206,17 +338,17 @@ a:hover{
 
 /*Color de la marca*/
 a.brand{
-  color:#ffffff;  
+  color: var(--text-color-second);  
   font-size: 3rem;
   font-weight: bold;
 }
 a.brand:hover{
-  color:#ffffff;  
+  color: var(--text-color-second);  
 }
 
 /*Links dentro del header tienen el siguiente color*/
 header a{
-  color:#ffffff;
+  color: var(--text-color-second);
   padding: 1rem;
 }
 header a:hover{
@@ -305,11 +437,11 @@ img.large{
 ==================================
 */
 .success{
-  color: #0e5202;
+  color: var(--text-color-success);
 }
 
 .danger{
-  color: #c00b0b;
+  color: var(--text-color-danger);
 }
 
 .alert{
@@ -319,11 +451,11 @@ img.large{
 }
 
 .alert-info{
-  color: #2020a0;
+  color: var(--text-color-info);
   background-color: #b3b3fa;
 }
 
 .alert-danger{
-  color: #c00b0b;
+  color: var(--text-color-danger);
   background-color: #f59191;
 }

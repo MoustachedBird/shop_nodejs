@@ -44,7 +44,7 @@ export default function CartScreen(props) {
 
     return (
         <div className="huge-card">
-            <div className="row top">
+            <div className="flex-container top">
                 <div className="col-2">
                     <h1>Mi carrito de compras</h1>
                     {cartItems.length === 0? 
@@ -55,7 +55,7 @@ export default function CartScreen(props) {
                         <ul>
                             {cartItems.map( item => (
                                 <li key={item.product}>
-                                    <div className="row">
+                                    <div className="flex-container">
                                         <div>
                                             <img src={item.image} alt={item.name} className="small"></img>
                                         </div>

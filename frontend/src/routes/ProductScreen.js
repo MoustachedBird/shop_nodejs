@@ -13,8 +13,6 @@ export default function ProductScreen(props) {
     const productDetails = useSelector((state) => state.productDetails);
     const {loading, error,  product} = productDetails;
 
-    
-
     //variable y funcion para actualzar el valor
     const [qty, setQty] = useState(1);
 
@@ -36,7 +34,7 @@ export default function ProductScreen(props) {
             :    
             <div className="huge-card">        
                 <Link to='/'>Inicio</Link>
-                <div className="row top">
+                <div className="flex-container top">
                     <div className="col-2">
                         <img 
                             className="large" 
@@ -63,14 +61,14 @@ export default function ProductScreen(props) {
                         <div className="card card-body">
                             <ul>
                                 <li>
-                                    <div className="row">
+                                    <div className="flex-container">
                                         <div>Precio:</div>
                                         <div className="price">${product.price}</div>
                                     </div>
                                 </li>
 
                                 <li>
-                                    <div className="row">
+                                    <div className="flex-container">
                                         <div>Estado:</div>
                                         <div>
                                             {product.countInStock>0?(
@@ -85,7 +83,7 @@ export default function ProductScreen(props) {
                                     product.countInStock >0  &&
                                     <>
                                         <li>
-                                            <div className="row">
+                                            <div className="flex-container">
                                                 <div>Cantidad</div>
                                                 <div>
                                                     <select value={qty} onChange={e => setQty(e.target.value)}>

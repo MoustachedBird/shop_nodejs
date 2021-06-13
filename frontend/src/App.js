@@ -1,53 +1,34 @@
-import { useSelector } from "react-redux";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import CartIcon from "./components/CartIcon";
+
+import NavBar from "./components/NavBar";
+
+import SigninIcon from "./components/SigninIcon";
 import CartScreen from "./routes/CartScreen";
 import HomeScreen from "./routes/HomeScreen";
 import ProductScreen from "./routes/ProductScreen";
 
-function App() {
-  
-    const cart = useSelector(state => state.cart);
-    const {cartItems} = cart;
 
-  
+function App() {
+    const brandName="EDI-Q";
     return (
     <BrowserRouter>
-        <div className="main-container">
-            <header className="row">
-                <div>
-                    <Link className="brand" to="/">
-                        EDI-Q
-                    </Link>
-                </div>
-                <div>
-                    <span className="navigation-bar-icon">
-                        <Link to="/signin">
-                            <i className="fas fa-user separate-right"></i>
-                            Iniciar sesión
-                        </Link>
-                    </span>
-                    <span className="navigation-bar-icon">
-                        <Link to="/cart">
-                            <i className="fas fa-shopping-cart"></i>
-                            {cartItems.length >0 && (
-                                <span className="badge separate-right"> 
-                                    {cartItems.length}
-                                </span>
-                            )}
-                            Carrito
-                        </Link>
-                    </span>
-                </div>
+        <div className="flex-container-column">
+            <header>
+                <NavBar brandName={brandName}>
+                    <SigninIcon>Iniciar Sesión</SigninIcon>
+                    <CartIcon>Mi carrito</CartIcon>   
+                </NavBar>                    
             </header>
             <main>
                 <Route path="/cart/:id?" component={CartScreen}></Route>                
                 <Route path="/product/:id" component={ProductScreen}></Route>                
                 <Route path="/" component={HomeScreen} exact></Route>
             </main>
-            <footer className="row center" style={{ 
+            <footer className="flex-container center" style={{ 
                 backgroundImage: `url(${process.env.PUBLIC_URL + '/img/bg-footer.png'})` 
             }}>
-                © Copyright 2021 Ediq MX
+                © Copyright 2021 {brandName}
             </footer>
         </div>
     </BrowserRouter>

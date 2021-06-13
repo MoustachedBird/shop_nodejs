@@ -26,7 +26,7 @@ export default function HomeScreen() {
             :
             error ? <MessageBox variant="danger" >{error}</MessageBox>
             :    
-            <div className="row center"> 
+            <div className="flex-container center"> 
                 {
                     products.map(product => (
                         <Product key={product._id} product = {product}></Product>             
