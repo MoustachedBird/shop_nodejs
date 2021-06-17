@@ -6,9 +6,9 @@ export default function SigninIcon(props) {
         <li className="nav-item">
             <Link to="/signin" className='icon-button'>
                 <i className="fas fa-user"></i>
-                <par className="separate-left">
+                <p className="separate-left">
                     {props.children}
-                </par>
+                </p>
             </Link>
         </li>
     )

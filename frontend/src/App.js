@@ -13,7 +13,7 @@ function App() {
     const brandName="EDI-Q";
     return (
     <BrowserRouter>
-        <div className="flex-container-column">
+        <div className="grid-container">
             <header>
                 <NavBar brandName={brandName}>
                     <SigninIcon>Iniciar Sesión</SigninIcon>

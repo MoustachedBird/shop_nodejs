@@ -6,7 +6,7 @@ import MenuItem from './MenuItem';
 
 export default function NavBar(props) {
     return (
-        <div className="flex-container space-around">
+        <nav className="flex-container space-around">
             <div className="flex-container size-1">
                 <Link className="brand" to="/">{props.brandName}</Link>
             </div> 
@@ -22,6 +22,6 @@ export default function NavBar(props) {
                 <MenuItem>Contacto</MenuItem>
                 <MenuItem>Ayuda</MenuItem>
             </Menu>
-        </div>
+        </nav>
     )
 }

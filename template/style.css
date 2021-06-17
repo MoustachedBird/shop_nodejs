@@ -55,7 +55,6 @@ header{
 
 main{
     grid-area: main;
-    /*borde*/
     padding: 1rem;
 }
 

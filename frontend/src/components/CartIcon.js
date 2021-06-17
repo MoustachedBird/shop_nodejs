@@ -15,9 +15,9 @@ export default function CartIcon(props) {
                         {cartItems.length}
                     </span>
                 )}
-                <par className="separate-left">
+                <p className="separate-left">
                     {props.children}
-                </par>
+                </p>
             </Link>
         </li>
     )

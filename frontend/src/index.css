@@ -32,6 +32,7 @@ html{
   --text-color-success: #0e5202;  
   --text-color-danger: #c00b0b;
   --text-color-info: #2020a0;
+  --color-hover: #f5c906;
 
   --nav-size: 60px;
   
@@ -42,8 +43,10 @@ html{
 
 body{
   margin: 0;
-  height: 100vh;
   font-size: 1.6rem;
+  height: 100vh;
+
+    
   /*opciones de fuentes 1,2 y 3...*/
   /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   */
@@ -56,12 +59,32 @@ body{
 =====================================
 ==============[Diseño]===============
 =====================================
-*/
+
+
+/*Creamos una clase llamada grid-container*/
+.grid-container{
+  /*Para manejo de secciones mas facilmente*/
+  display: grid;
+  /*Se definen las áreas de las paginas*/
+  grid-template-areas: 
+  'header'
+  'main'
+  'footer';
+
+  /*1 fr = 1 fragmento, total de fragmentos que ocupa una sección*/
+  grid-template-columns: 1fr; /*solo habra una columna, 1 fragmento*/
+  
+  /*Se establece el tamaño de cada una de las secciones 
+  definidas anteriormente (header, main y footer) en el mismo orden*/
+  grid-template-rows: auto 1fr 10rem;
+  
+  height: 100%;
+}
+
+
 /*QUITAR GRID*/
 header{
-  display: flex;
-  flex-direction: row;
-  height: 100%;
+  grid-area: header;
   background-color: var(--bg-nav);
 }
 
@@ -91,6 +114,23 @@ footer{
 ======== [Nav bar] ==========
 ====================================
 */
+
+nav{
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/*Color de la marca*/
+.brand{
+  color: var(--text-color-second);  
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.brand:hover{
+  color: var(--text-color-second);  
+}
+
 .nav-item{
   display: flex;
 }
@@ -126,58 +166,41 @@ footer{
 
 .menu-bar{
   background-color: var(--bg-nav);
-  width: auto;
-  order:-1;
-  justify-content: center;
-  align-items: center;
+  order: -1;
 }
 
-.dropdown{
-  /*
-  position: absolute;
-  top: 58px;
-  width: 300px;
-  transform: translateX(10%);
-  background-color: (var(--bg-main));
-  border: var(--border);
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  overflow: hidden;
-  background-color: var(--bg-nav);
-  */
-  display: none;
-  flex-direction: column;
+
+.menuIcon{
+  color: var(--text-color-second);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
+.menuIcon:hover{
+  color: var(--color-hover);
+}
 
 .menu-item{
   height: 35px;
   display: flex;
   align-items: center;
   border-radius: var(--border-radius);
-  transition: background var(--speed);
 }
 
 @media screen and (min-width:610px){
-  .dropdown{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
   .menuIcon{
     display: none;
   }
 
+
   .menu-bar{
-    background-color: var(--bg-footer);
+    position: unset;
+    left: unset;
     order:unset;
+    background-color: var(--bg-footer);
     width: 100%;
     align-items: center;
-  }
-
-  header{
-    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -288,7 +311,7 @@ li{
 /*otros elementos de entrada de datos y botones*/
 input, select, textarea, button{
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   border: 0.1rem #979494 solid;
 
   font-size: 1.6rem;
@@ -300,7 +323,7 @@ input, select, textarea, button{
 }
 
 button{
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   cursor: pointer;
 
 }
@@ -329,21 +352,11 @@ a:hover{
 
 .number-cart{
   background-color: #c00b0b;
-  color: #ffffff;
+  color: var(--text-color-second);
   border-radius: 50%;
   padding: 0.2rem 0.7rem;
   font-size: 1.4rem;
   margin-left: 0.2rem;
-}
-
-/*Color de la marca*/
-a.brand{
-  color: var(--text-color-second);  
-  font-size: 3rem;
-  font-weight: bold;
-}
-a.brand:hover{
-  color: var(--text-color-second);  
 }
 
 /*Links dentro del header tienen el siguiente color*/
@@ -352,7 +365,7 @@ header a{
   padding: 1rem;
 }
 header a:hover{
-  color: #f5c906;
+  color: var(--color-hover);
 }
 
 /*
@@ -400,7 +413,7 @@ img.large{
 }
 
 .huge-card{
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   border-radius: 0.8rem;
   margin: 1rem;    
   border: 0.1rem #d1d1d1 solid;
@@ -424,11 +437,11 @@ img.large{
 }
 
 .navigation-bar-icon{
-  color: #ffffff;
+  color: var(--text-color-second);
 }
 
 .navigation-bar-icon:hover{
-  color: #f5c906;
+  color: var(--color-hover);
 }
 
 /*
