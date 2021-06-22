@@ -521,3 +521,23 @@ form label{
   margin: 1rem 0;
   display: block;
 }
+
+
+/*
+===================================
+======== [Pasos de pedidos] =======
+===================================
+*/
+.checkout-steps > div{
+  border-top: 0.5rem var(--bg-nav) solid;
+  border-radius: 0.6rem;
+  color: var(--text-color-main);
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.checkout-steps > div.active{
+  border-top: 0.5rem var(--text-color-success) solid;
+  color: var(--text-color-main);
+}

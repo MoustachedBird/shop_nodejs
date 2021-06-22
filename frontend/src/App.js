@@ -8,8 +8,11 @@ import NavBar from "./components/NavBar";
 import SigninIcon from "./components/SigninIcon";
 import CartScreen from "./routes/CartScreen";
 import HomeScreen from "./routes/HomeScreen";
+import PaymentMethodsScreen from "./routes/PaymentMethodsScreen";
+import PlaceOrderScreen from "./routes/PlaceOrderScreen";
 import ProductScreen from "./routes/ProductScreen";
 import RegisterSreen from "./routes/RegisterScreen";
+import ShippingAddressScreen from "./routes/ShippingAddressScreen";
 import SigninScreen from "./routes/SigninScreen";
 
 
@@ -31,7 +34,7 @@ function App() {
                 <NavBar brandName={brandName}>
                     {userInfo ? 
                     <div className="dropdown">
-                        <SigninIcon>{userInfo.name} <i class="fas fa-caret-down"></i></SigninIcon>
+                        <SigninIcon>{userInfo.name} <i className="fas fa-caret-down"></i></SigninIcon>
                         <ul className="dropdown-content">
                             <Link to="#signout" onClick={singoutHandler}>Cerrar Sesión</Link>
                         </ul>
@@ -48,9 +51,12 @@ function App() {
                 <Route path="/" component={HomeScreen} exact></Route>
                 <Route path="/signin" component={SigninScreen}></Route>
                 <Route path="/register" component={RegisterSreen}></Route>
+                <Route path="/shipping" component={ShippingAddressScreen}></Route>
+                <Route path="/payment" component={PaymentMethodsScreen}></Route>
+                <Route path="/placeorder" component={PlaceOrderScreen}></Route>
             </main>
             <footer className="flex-container center" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL + '/img/bg-footer.png'})` 
+                backgroundImage: `url(${process.env.PUBLIC_URL + '/background/bg-footer.png'})` 
             }}>
                 © Copyright 2021 {brandName}
             </footer>
