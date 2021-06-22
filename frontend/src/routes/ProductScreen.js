@@ -33,7 +33,6 @@ export default function ProductScreen(props) {
             error ? <MessageBox variant="danger" >{error}</MessageBox>
             :    
             <div className="huge-card">        
-                <Link to='/'>Inicio</Link>
                 <div className="flex-container top">
                     <div className="col-2">
                         <img 

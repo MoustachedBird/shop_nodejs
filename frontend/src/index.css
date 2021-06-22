@@ -19,6 +19,7 @@ html{
   box-sizing: border-box; 
 }
 
+
 /*CSS root de REACT*/
 #root{
   height: 100%;
@@ -163,6 +164,28 @@ nav{
 ======== [Dropdown] ==========
 ====================================
 */
+
+.dropdown{
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content{
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 80%;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: var(--bg-nav);
+  margin: 0;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
 
 .menu-bar{
   background-color: var(--bg-nav);
@@ -471,4 +494,26 @@ img.large{
 .alert-danger{
   color: var(--text-color-danger);
   background-color: #f59191;
+}
+
+
+/*
+===================================
+======== [Formularios] =======
+===================================
+*/
+form{
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+form label{
+  margin: 1rem 0;
+  display: block;
 }

@@ -9,27 +9,49 @@ const MenuOptions = styled.ul`
   
 
   @media (max-width: 610px) {
-    ${({ open }) => open ? `
-        display: flex;
+    
+    
+    ${({open }) => !open ? `
+        display: none;
+        height:0;
     `
     :
     `
-        display: none;
+        height: 100%;    
+        justify-content: unset;
+        flex-flow: column nowrap;
+        background-color: #0D2538;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60%;
+        padding: 2.5rem;
+        padding-top:6rem;  
+        font-size: 2rem; 
     `
     }
-    justify-content: unset;
-  
-    flex-flow: column nowrap;
-    background-color: #0D2538;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 70%;
-    padding-top: 3.5rem;
   }
 `;
 
+const BlurDiv = styled.div`
+  @media (max-width: 610px) {    
+    ${({open }) => !open ? `
+        display: none;
+        height:0;
+    `
+    :
+    `
+        display: unset;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-color: #00000080;
+    `
+    }
+  }
+`;
 
 export default function Menu(props) {
     const [open, setOpen] = useState(false)
@@ -51,14 +73,17 @@ export default function Menu(props) {
     }, [])
     
     return (
-        <div className="menu-bar" ref={menuRef}>
+        <div className="menu-bar">
             <div className="menuIcon" onClick={() => setOpen(!open)}>
                 <i className="fas fa-bars fa-2x"></i>
             </div>
-            <MenuOptions open={open}>
+            <BlurDiv open={open}>
+
+            </BlurDiv>
+            <MenuOptions open={open} ref={menuRef}>
                 {props.children}
             </MenuOptions>
-            
+
         </div>
     )
 }
