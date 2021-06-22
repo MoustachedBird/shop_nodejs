@@ -9,7 +9,8 @@ import SigninIcon from "./components/SigninIcon";
 import CartScreen from "./routes/CartScreen";
 import HomeScreen from "./routes/HomeScreen";
 import ProductScreen from "./routes/ProductScreen";
-import SigninSreen from "./routes/SigninSreen";
+import RegisterSreen from "./routes/RegisterScreen";
+import SigninScreen from "./routes/SigninScreen";
 
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
                 <Route path="/cart/:id?" component={CartScreen}></Route>                
                 <Route path="/product/:id" component={ProductScreen}></Route>                
                 <Route path="/" component={HomeScreen} exact></Route>
-                <Route path="/signin" component={SigninSreen}></Route>
+                <Route path="/signin" component={SigninScreen}></Route>
+                <Route path="/register" component={RegisterSreen}></Route>
             </main>
             <footer className="flex-container center" style={{ 
                 backgroundImage: `url(${process.env.PUBLIC_URL + '/img/bg-footer.png'})` 

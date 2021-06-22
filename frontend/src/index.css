@@ -472,6 +472,10 @@ img.large{
 =========== [Alertas] ============
 ==================================
 */
+.loading{
+  display: block !important;
+}
+
 .success{
   color: var(--text-color-success);
 }

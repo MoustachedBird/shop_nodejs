@@ -5,7 +5,7 @@ import { signin } from '../actions/userActions';
 import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 
-export default function SigninSreen(props) {
+export default function SigninScreen(props) {
     
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -55,7 +55,7 @@ export default function SigninSreen(props) {
                     <label/>
                     <div>
                         ¿No tienes una cuenta? {' '}
-                        <Link to="/register">Regístrate aquí</Link>
+                        <Link to={`/register?redirect=${redirect}`}>Regístrate aquí</Link>
                     </div>
                 </div>
             </form>

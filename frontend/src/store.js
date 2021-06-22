@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/cartReducers';
 import { productListReducer } from './reducers/productReducers';
 import { productDetailsReducer} from './reducers/productReducers';
-import { userSigninReducer } from './reducers/userReducers';
+import { userRegisterReducer, userSigninReducer } from './reducers/userReducers';
 
 const initialState = {
     cart:{
@@ -22,6 +22,7 @@ const reducer = combineReducers({
     productDetails: productDetailsReducer,
     cart: cartReducer,
     userSignin: userSigninReducer,
+    userRegister: userRegisterReducer,
 })
 
 /* componer potenciador???? para mostar en chrome de manera grafica utilizando extension*/
