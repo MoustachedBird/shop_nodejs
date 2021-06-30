@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import SigninIcon from "./components/SigninIcon";
 import CartScreen from "./routes/CartScreen";
 import HomeScreen from "./routes/HomeScreen";
+import OrderScreen from "./routes/OrderScreen";
 import PaymentMethodsScreen from "./routes/PaymentMethodsScreen";
 import PlaceOrderScreen from "./routes/PlaceOrderScreen";
 import ProductScreen from "./routes/ProductScreen";
@@ -36,7 +37,7 @@ function App() {
                     <div className="dropdown">
                         <SigninIcon>{userInfo.name} <i className="fas fa-caret-down"></i></SigninIcon>
                         <ul className="dropdown-content">
-                            <Link to="#signout" onClick={singoutHandler}>Cerrar Sesión</Link>
+                            <Link to="/#signout" onClick={singoutHandler}>Cerrar Sesión</Link>
                         </ul>
                     </div>
                     :
@@ -54,6 +55,7 @@ function App() {
                 <Route path="/shipping" component={ShippingAddressScreen}></Route>
                 <Route path="/payment" component={PaymentMethodsScreen}></Route>
                 <Route path="/placeorder" component={PlaceOrderScreen}></Route>
+                <Route path="/order/:id" component={OrderScreen}></Route>
             </main>
             <footer className="flex-container center" style={{ 
                 backgroundImage: `url(${process.env.PUBLIC_URL + '/background/bg-footer.png'})` 
