@@ -10,7 +10,7 @@ export default function NavBar(props) {
             <div className="flex-container size-1">
                 <Link className="brand" to="/">{props.brandName}</Link>
             </div> 
-            <input type="text" placeholder="Buscar en EdiQ" className="size-1 search-bar"></input> 
+            <input type="text" placeholder={"Buscar en "+props.brandName} className="size-1 search-bar"></input> 
             <ul className='flex-container size-1 items_to_end'>
                 {props.children}
             </ul>

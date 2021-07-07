@@ -175,7 +175,7 @@ nav{
   display: none;
   right: 0;
   top: 80%;
-  min-width: 12rem;
+  min-width: 18rem;
   padding: 1rem;
   z-index: 1;
   background-color: var(--bg-nav);
@@ -363,6 +363,12 @@ button.block{
   width: 100%;
 }
 
+button.small{
+  font-size: 1.5rem;
+}
+
+
+
 /*Para eliminar el subrayado en las etiquetas a*/
 a{
   text-decoration: none;
@@ -500,6 +506,9 @@ img.large{
   background-color: #f59191;
 }
 
+.alert-success{
+  color: var(--text-color-success);
+}
 
 /*
 ===================================
@@ -540,4 +549,27 @@ form label{
 .checkout-steps > div.active{
   border-top: 0.5rem var(--text-color-success) solid;
   color: var(--text-color-main);
+}
+
+/*Table*/
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table tbody tr:nth-of-type(odd){
+  background-color: #f4f4f4;
+}
+
+.table td, 
+.table th{
+  text-align: left;
+  border: solid gainsboro;
+  border-width: 0.1rem;
+  padding: 0.5 rem;
+}
+
+.table button{
+  margin: 0 0.2rem;
+
 }
